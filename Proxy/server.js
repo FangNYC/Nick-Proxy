@@ -10,10 +10,10 @@ app.use(parser.json());
 //app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.all('/*', function(req, res, next) {
+app.all('/*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   next();
- });
+});
 
 
 
@@ -83,7 +83,7 @@ app.all('/*', function(req, res, next) {
 
 // Add Dev's API endpoints
 app.get('/description', (req, res) => {
-  axios.get(`http://localhost:4000${req.url}`)
+  axios.get(`http://167.99.20.35:4000${req.url}`)
     .then((results) => {
       res.send(results.data);
     })
