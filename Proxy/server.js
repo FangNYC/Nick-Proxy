@@ -83,6 +83,8 @@ app.all('/*', function (req, res, next) {
 
 // Add Dev's API endpoints
 app.get('/description', (req, res) => {
+  console.log('description has been hit');
+  console.log(req.url);
   axios.get(`http://167.99.20.35:4000${req.url}`)
     .then((results) => {
       res.send(results.data);
